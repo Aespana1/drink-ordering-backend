@@ -36,7 +36,8 @@ app.post("/complete-order", (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT; // Remove fallback port (5000)
+;
 // Default route (homepage)
 app.get("/", (req, res) => {
   res.send("Backend is working! 🚀");
