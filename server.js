@@ -42,6 +42,9 @@ app.post("/complete-order", (req, res) => {
 
 // Fix port issue for Render
 const PORT = process.env.PORT || 5000;
+app.get("/debug-routes", (req, res) => {
+  res.json(app._router.stack.filter(r => r.route).map(r => r.route.path));
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
