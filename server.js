@@ -37,6 +37,10 @@ app.post("/complete-order", (req, res) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
+// Default route (homepage)
+app.get("/", (req, res) => {
+  res.send("Backend is working! 🚀");
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
